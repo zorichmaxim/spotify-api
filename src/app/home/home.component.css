@@ -12,4 +12,6 @@ input {
     border-radius: 3px;
     border: 1px solid;
     text-indent: 5px;
+    padding: 10px;
+    width: 300px;
 }

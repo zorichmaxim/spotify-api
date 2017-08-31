@@ -8,7 +8,7 @@ export class ArtistsService {
     constructor(public http: Http) {
     }
 
-    searchArtist(artist: string) {
+    public searchArtist(artist: string) {
         let requestOptions = new RequestOptions();
 
         let params: URLSearchParams = new URLSearchParams();

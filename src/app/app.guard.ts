@@ -16,5 +16,4 @@ export class AppGuard implements CanActivate {
         }
         return true;
     }
-
 }

@@ -6,13 +6,12 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class AppResolver implements Resolve<any> {
-  constructor(
-      public authService: AuthService
+  constructor(public authService: AuthService
   ) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
     if(this.authService.authenticated()) {
-        return 
+        return
     }
     this.authService.login();
   }

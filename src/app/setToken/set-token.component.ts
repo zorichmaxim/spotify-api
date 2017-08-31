@@ -7,7 +7,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class SetTokenComponent implements OnInit {
 
-
     constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router) {
     }
 

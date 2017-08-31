@@ -19,7 +19,7 @@ export class ArtistsComponent {
                 public router: Router) {
     }
 
-    ngOnInit() {
+    private ngOnInit() {
         this.route.params.subscribe(
             params => {
                 this.searched = params.search;
@@ -28,7 +28,7 @@ export class ArtistsComponent {
         )
     }
 
-    search(search: string) {
+    private search(search: string): void{
         this.artistsService.searchArtist(search)
             .map(response => response.json())
             .subscribe(
@@ -38,7 +38,7 @@ export class ArtistsComponent {
             )
     }
 
-    searchArtist() {
+    private searchArtist(): void {
         this.router.navigate(['artists', this.searchText])
     }
 

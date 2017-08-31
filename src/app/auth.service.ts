@@ -23,7 +23,6 @@ export class AuthService {
         return !!this.token;
     }
 
-
     login() {
         window.location.href = this.loginUrl;
     }
