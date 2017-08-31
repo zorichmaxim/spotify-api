@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class AuthService {
@@ -10,20 +10,20 @@ export class AuthService {
         this.token = localStorage.getItem('token');
     }
 
-    getToken() {
+    public getToken() {
         return this.token;
     }
 
-    setToken(token: any) {
+    public setToken(token: any) {
         localStorage.setItem('token', token);
         this.token = token;
     }
 
-    authenticated() {
+    public authenticated() {
         return !!this.token;
     }
 
-    login() {
+    public login() {
         window.location.href = this.loginUrl;
     }
 }
