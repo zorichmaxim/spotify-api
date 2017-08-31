@@ -1,10 +1,9 @@
-<div class="view-container">
-    <h1 class="main-text">SpotiSearch</h1>
-    <p>Search your favourite songs over spotify, just enter an artist's name in the following searchbox and enjoy</p>
+<h1 class="main-text">SpotiSearch</h1>
+<p>Search your favourite songs over spotify, just enter an artist's name in the following searchbox and enjoy</p>
 
-    <input
-        type="text"
-        [(ngModel)]="searchText"
-        (keyup.enter)="searchArtist()"
-        placeholder="Type the name of your favourite artist">
-</div>
+<input
+    type="text"
+    [(ngModel)]="searchText"
+    (keyup.enter)="searchArtist()"
+    placeholder="Type the name of your favourite artist">
+
