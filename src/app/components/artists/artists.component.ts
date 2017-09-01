@@ -28,7 +28,7 @@ export class ArtistsComponent {
         )
     }
 
-    private search(search: string): void{
+   public search(search: string): void{
         this.artistsService.searchArtist(search)
             .map(response => response.json())
             .subscribe(
@@ -38,7 +38,7 @@ export class ArtistsComponent {
             )
     }
 
-    private searchArtist(): void {
+    public searchArtist(): void {
         this.router.navigate(['artists', this.searchText])
     }
 

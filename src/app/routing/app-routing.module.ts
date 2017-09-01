@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {HomeComponent} from './home/home.component';
-import {ArtistsComponent} from './artists/artists.component';
-import {AppResolver} from './app.resolver';
-import {SetTokenComponent} from "./setToken/set-token.component";
-import {AppGuard} from './app.guard';
+import {HomeComponent} from '../components/home/home.component';
+import {ArtistsComponent} from '../components/artists/artists.component';
+import {AppResolver} from '../interceptors/app.resolver';
+import {SetTokenComponent} from "../components/setToken-component/set-token.component";
+import {AppGuard} from '../guards/app/app.guard';
 
 const routes: Routes = [
     {
