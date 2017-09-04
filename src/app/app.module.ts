@@ -8,12 +8,14 @@ import {AppRoutingModule, routedComponents} from './routing/app-routing.module';
 
 import {AuthService} from './services/auth/auth.service';
 import {AppResolver} from './interceptors/app.resolver';
-
 import {Http} from '@angular/http';
 import {InterceptedHttpFactory} from './interceptors/interceptedHttpFactory';
 import {AppGuard} from './guards/app/app.guard';
-
-import { ArtistsService } from './components/artists/artists.service';
+import {HttpClientModule} from '@angular/common/http';
+import {ErrorHandlerService} from "./services/error-handler/error.service";
+import {ArtistsService} from './services/artists/artists.service';
+import {SetTokenComponent} from "./components/setToken-component/set-token.component";
+import {BackendService} from "./services/backend/backend.service";
 
 @NgModule({
     imports: [
@@ -21,22 +23,26 @@ import { ArtistsService } from './components/artists/artists.service';
         HttpModule,
         ReactiveFormsModule,
         FormsModule,
-        AppRoutingModule,
+        HttpClientModule,
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
-        routedComponents
+        routedComponents,
+        SetTokenComponent
     ],
     providers: [
         AuthService,
         ArtistsService,
+        ErrorHandlerService,
         AppResolver,
         {
             provide: Http,
             useFactory: InterceptedHttpFactory,
             deps: [XHRBackend, RequestOptions, AuthService]
         },
-        AppGuard
+        AppGuard,
+        BackendService
     ],
 
     bootstrap: [AppComponent],

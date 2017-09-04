@@ -9,8 +9,8 @@ export class InterceptedHttp extends Http {
 
     public baseUrl = 'https://api.spotify.com/v1';
 
-    constructor(backend: ConnectionBackend,
-                defaultOptions: RequestOptions,
+    constructor(public backend: ConnectionBackend,
+                public defaultOptions: RequestOptions,
                 public authService: AuthService) {
         super(backend, defaultOptions);
     }
