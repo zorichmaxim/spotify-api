@@ -6,8 +6,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Injectable()
 export class ErrorHandlerService {
 
-    constructor() {}
-
     public handleError(errorResponse: HttpErrorResponse | any): Observable<any> {
         const {status, statusText, error, message} = errorResponse;
         let errMsg: string = 'Unknown error!';

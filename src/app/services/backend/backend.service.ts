@@ -20,7 +20,7 @@ export class BackendService {
             .catch((err: HttpErrorResponse) => this.errorHandler.handleError(err));
     }
 
-    public get(url: string, options?): any { //Observable<any> needed
+    public get<T>(url: string, options?): Observable<T> { //Observable<any> needed
         if(options.from === 'search'){
             console.log(ArtistData.getArtist());
             return ArtistData.getArtist();
@@ -29,7 +29,7 @@ export class BackendService {
         return this.requestHandler(source);
     }
 
-    public post(url: string, body, options?): Observable<any> {
+    public post<T>(url: string, body, options?): Observable<T> {
         const source = this.http.post(url, body, options);
         return this.requestHandler(source);
     }

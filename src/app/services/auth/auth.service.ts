@@ -6,7 +6,7 @@ import {AuthenticatedUrl} from "../../classes/authenticated-url";
 export class AuthService {
     @LocalStorage() token: any;
 
-    private loginUrl =  new AuthenticatedUrl();
+    constructor (private authUrl: AuthenticatedUrl){}
 
     public getToken(): any {
        return this.token;
@@ -21,6 +21,6 @@ export class AuthService {
     }
 
     public login(): void {
-        window.location.href = this.loginUrl.loginUrl();
+        window.location.href = this.authUrl.loginUrl();
     }
 }

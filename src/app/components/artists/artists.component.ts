@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ArtistsService} from "../../services/artists/artists.service";
 
@@ -7,7 +7,7 @@ import {ArtistsService} from "../../services/artists/artists.service";
     templateUrl: './artists.component.html',
     styleUrls: ['./artists.component.css']
 })
-export class ArtistsComponent {
+export class ArtistsComponent implements OnInit{
 
     public artists: Array<any>;
     public searched: string;
@@ -15,8 +15,7 @@ export class ArtistsComponent {
 
     constructor(public route: ActivatedRoute,
                 public artistsService: ArtistsService,
-                public router: Router) {
-    }
+                public router: Router) {}
 
     ngOnInit() {
         this.route.params.subscribe(
