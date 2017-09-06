@@ -9,9 +9,7 @@ import {Router} from '@angular/router';
 export class HomeComponent {
   public searchText: string = '';
 
-  constructor(
-    public router: Router
-  ) {}
+  constructor(public router: Router) {}
 
   public searchArtist(): void {
     this.router.navigate(['artists', this.searchText])

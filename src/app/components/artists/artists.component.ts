@@ -1,25 +1,23 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ArtistsService} from "./artists.service";
+import {ArtistsService} from "../../services/artists/artists.service";
 
 @Component({
     selector: 'artists',
     templateUrl: './artists.component.html',
     styleUrls: ['./artists.component.css']
 })
-export class ArtistsComponent {
+export class ArtistsComponent implements OnInit{
 
     public artists: Array<any>;
     public searched: string;
     public searchText: string = '';
 
-
     constructor(public route: ActivatedRoute,
                 public artistsService: ArtistsService,
-                public router: Router) {
-    }
+                public router: Router) {}
 
-    private ngOnInit() {
+    ngOnInit() {
         this.route.params.subscribe(
             params => {
                 this.searched = params.search;
@@ -28,14 +26,17 @@ export class ArtistsComponent {
         )
     }
 
-   public search(search: string): void{
-        this.artistsService.searchArtist(search)
-            .map(response => response.json())
-            .subscribe(
-                response => {
-                    this.artists = response.artists.items;
-                }
-            )
+    public search(search: string): void {
+        // this.artistsService.searchArtist(search)
+        //     .map(response => response.json())
+        //     .subscribe(
+        //         response => {
+        //             console.log(response);
+        //             this.artists = response.artists.items;
+        //         }
+        //     )
+        let buff = this.artistsService.searchArtist(search);
+        this.artists = buff["artists"].items;
     }
 
     public searchArtist(): void {
